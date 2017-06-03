@@ -47,7 +47,8 @@ C:\Users\Wade\Projects\sharedlib
 you can see all `node_modules\sharedlib` are link to `~\Projects\sharedlib`. This is why changes affect other projects immediately, becasue they are pointer the same places in the hard disk.
 
 # pros and cons
-There is another benefit, you can simplify the path of require.
+You can publish libraries locally and the libraries are updated instantly. Unlike public libraies, you have to push and pull the a server.
+Also there is another benefit, you can simplify the path of require.
 
 For example,
 ```
@@ -55,7 +56,7 @@ For example,
 var lib = require("sharedlib");
 ```
 
-However, the linked packages aren't define package.json. so other people git clone the project, they have to run npm-link manually at first. 
+However, the linked packages aren't define in package.json. so other people want to start working on the project, they have to run npm-link manually at first. 
 
 # npm-unlink
 you can run `npm unlink` to remove the symlimks.
