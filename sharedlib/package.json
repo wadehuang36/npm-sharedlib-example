@@ -1,0 +1,11 @@
+{
+  "name": "sharedlib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init-link": "npm link"
+  },
+  "author": "",
+  "license": "ISC"
+}
