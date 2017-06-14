@@ -1,0 +1,35 @@
+{
+  "name": "admittedly-api",
+  "version": "1.0.0",
+  "description": "the api for admittedly",
+  "main": "./dist/index.js",
+  "repository": "https://github.com/swarmnyc/admittedly-api",
+  "scripts": {
+    "start": "npm run build:live",
+    "start:prod": "node ./src/app.js",
+    "build": "npm run clean && npm run tsc",
+    "tsc": "./node_modules/.bin/tsc -p ./",
+    "build:live": "./node_modules/.bin/nodemon --exec ts-node -- ./src/app.ts",
+    "test": "./node_modules/.bin/mocha -r ts-node/register ./test/**/*.ts",
+    "clean": "rm -rf dist"
+  },
+  "author": "SWARM",
+  "license": "MIT",
+  "dependencies": {
+    "base64-url": "^1.3.3",
+    "mongoose": "^4.10.6",
+    "koa": "^2.0.0",
+    "koa-logger": "^2.0.0",
+    "koa-router": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^4.7.17",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "sinon": "^2.1.0",
+    "ts-node": "^2.1.0",
+    "typescript": "^2.3.4"
+  }
+}
