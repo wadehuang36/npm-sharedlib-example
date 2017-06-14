@@ -1,4 +1,6 @@
 // SectionType
+import { strEnum } from "../utils/enum-utils";
+
 export const SectionType = strEnum([
   'TitleV1',
   'ListV1'

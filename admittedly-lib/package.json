@@ -8,8 +8,8 @@
   "author": "SWARM",
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && npm run tsc",
-    "tsc": "./node_modules/.bin/tsc -p ./",
+    "build": "npm run clean && tsc -p ./",
+    "build:live": "npm run clean && tsc --watch -p ./",
     "clean": "rm -rf dist"
   }
 }

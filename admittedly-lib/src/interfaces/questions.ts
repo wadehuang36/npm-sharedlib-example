@@ -1,6 +1,6 @@
 import { BaseInterface } from "./base-interface";
 import { Dict } from "../dict";
-import { SectionType, QuestionType, QuestionNavType, OptionNavType } from "./types";
+import { SectionType, QuestionType, QuestionNavType, OptionNavType, OptionType } from "./types";
 
 export interface QuestionSet extends BaseInterface {
     title?: string;
@@ -13,6 +13,9 @@ export interface QuestionSet extends BaseInterface {
 
 export interface QuestionSection {
     title?: string;
+    /**
+     * The type which effects UI, Handler
+     */
     type?: SectionType;
     questions?: Question[];
 }
@@ -23,7 +26,7 @@ export interface Question {
      */
     id?: string;
     /**
-     * The type which effect UI, Handler
+     * The type which effects UI, Handler
      */
     type?: QuestionType;
     /**
@@ -61,6 +64,10 @@ export interface Question {
 export interface QuestionOption {
     title?: string;
     description?: string;
+    /**
+     * The type which effects UI, Handler
+     */
+    type:OptionType;
     imgUrl?: string;
     /**
      * The value that save in database
