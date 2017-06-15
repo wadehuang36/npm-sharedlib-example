@@ -11,12 +11,11 @@ import { cors } from "./middlewares/cors";
 import { redirectToHttps } from "./middlewares/https";
 import { Utils, Interfaces } from "admittedly-lib";
 import { dataInitialize } from "./models/_init";
-import { CollectionModel } from "./models/collection";
+import Log from "./lib/Log";
 
 //DB
 (<any>mongoose).Promise = global.Promise;
 mongoose.connect(environment.db_connection_string).then(dataInitialize);
-
 
 const app = new Koa();
 app.use(logger());
@@ -30,7 +29,7 @@ if (environment.focus_https) {
 }
 
 
-console.log("Environments", JSON.stringify(environment));
+Log.i("Environments", JSON.stringify(environment));
 http.createServer(app.callback()).listen(environment.port, () => {
-    console.log("HTTP Started");
+    Log.i("HTTP Started");
 });

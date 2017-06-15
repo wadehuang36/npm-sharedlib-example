@@ -2,8 +2,8 @@ import { Document, model, Model, Schema, SchemaOptions, SchemaDefinition } from 
 import * as mongoose from "mongoose"
 
 export class DefaultSchema extends Schema {
-    constructor(def) {
-        super(def, { timestamps: true });
+    constructor(def, options?) {
+        super(def, Object.assign({ timestamps: true }, options));
 
         this.virtual('id').
             get(function () { return this._id }).
@@ -32,11 +32,13 @@ export function createModel<T extends Document>(name: string, schema: SchemaDefi
     if (schema instanceof Schema) {
         _schema = schema;
     } else {
-        let callback = schema.callback as Function;
-        delete schema.callback;
-        _schema = new DefaultSchema(schema);
-        if (callback) {
-            callback(_schema)
+        let extraFunction = schema.extraFunction as Function;
+        let extraOptions = schema.extraOptions;
+        delete schema.extraOptions;
+        delete schema.extraFunction;
+        _schema = new DefaultSchema(schema, extraOptions);
+        if (extraFunction) {
+            extraFunction(_schema)
         }
     }
 
