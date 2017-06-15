@@ -3,11 +3,11 @@ import { createModel, Document, Schema} from "./_helper";
 
 
 let schema = {
-    callback:function(schema:Schema){
-        schema.index("name")
-    }
+    title: String,
+    layouts: Object,
+    sections: Object
 };
 
 export interface QuestionSetDocument extends Document, Interfaces.QuestionSet { }
 
-export const QuestionSetModel = createModel<QuestionSetDocument>("questionSets", schema);
+export const QuestionSetModel = createModel<QuestionSetDocument>("question-sets", schema);

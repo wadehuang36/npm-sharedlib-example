@@ -31,7 +31,7 @@ async function ensureIndexes() {
     for (let mod of modules) {
         for (let name of Object.getOwnPropertyNames(mod)) {
             let prop = mod[name];
-            if (Object.getPrototypeOf(prop).name == "Model") {
+            if (prop.prototype instanceof Model) {
                 Log.d("EnsureIndexes Model:", name);
                 await (prop as Model<any>).ensureIndexes().catch(callback);
             }

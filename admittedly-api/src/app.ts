@@ -6,12 +6,13 @@ import * as logger from 'koa-logger';
 import * as http from 'http';
 import * as https from 'https';
 
+import Log from "./lib/Log";
 import { environment } from "./environment";
 import { cors } from "./middlewares/cors";
 import { redirectToHttps } from "./middlewares/https";
 import { Utils, Interfaces } from "admittedly-lib";
 import { dataInitialize } from "./models/_init";
-import Log from "./lib/Log";
+import { initializeRoutes } from "./routes/_init";
 
 //DB
 (<any>mongoose).Promise = global.Promise;
@@ -28,6 +29,7 @@ if (environment.focus_https) {
     app.use(redirectToHttps)
 }
 
+initializeRoutes(app);
 
 Log.i("Environments", JSON.stringify(environment));
 http.createServer(app.callback()).listen(environment.port, () => {

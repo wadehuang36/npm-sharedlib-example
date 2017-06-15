@@ -24,6 +24,8 @@
     "koa-router": "^7.0.0"
   },
   "devDependencies": {
+    "@types/koa": "^2.0.39",
+    "@types/koa-router": "^7.0.22",
     "@types/mongoose": "^4.7.17",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
