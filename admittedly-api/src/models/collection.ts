@@ -1,11 +1,9 @@
 import { Interfaces } from "admittedly-lib"
-import { createModel, Document } from "./_helper";
+import { createModel, Document, Schema } from "./_helper";
 
 let schema = {
-    //do not use auto-generated id
     _id: {
-        type: String,
-        required: true
+        type: String //use string, not object id
     }
 };
 

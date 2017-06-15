@@ -1,5 +1,5 @@
 import * as Interfaces from "./interfaces"
-import * as Utils from "./interfaces"
+import * as Utils from "./utils"
 
 export { Interfaces, Utils }
 
