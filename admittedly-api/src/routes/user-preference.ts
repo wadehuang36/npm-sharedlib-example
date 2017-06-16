@@ -3,7 +3,7 @@ import Log from "../lib/Log";
 
 export class UserPreferenceRoute extends Route {
     urlBase() {
-        return "/v1/user-preference/";
+        return "user-preference";
     }
 
     register() {

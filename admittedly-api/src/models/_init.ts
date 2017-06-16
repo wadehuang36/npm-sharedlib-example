@@ -1,31 +1,27 @@
 import { Utils } from "admittedly-lib";
 import { Model, connection } from "mongoose";
+import { UserModel } from "./user";
 import Log from "../lib/Log";
 
 export async function dataInitialize() {
-    connection.db.admin().listDatabases().then((result => {
+    connection.db.admin().listDatabases().then(async result => {
         let dbs = result.databases as Array<any>;
         let dbName = connection.db.databaseName;
         if (!dbs.some(x => x.name == dbName)) {
             Log.d(`Database: ${dbName} don't exist, start initializing`);
-            ensureIndexes()
-                .then(init_data)
-                .then(() => {
-                    Log.d("Initialization Database Completed");
-                })
-                .catch((e) => {
-                    Log.e("Initialization Database Failed", e);
-                });
+            await init_data()
         }
-    }))
+
+        await ensureIndexes();
+    })
 }
 
-async function ensureIndexes() {
-    let callback = function (err) {
-        if (err)
-            Log.e("EnsureIndexes Failed", err);
-    };
+let callback = function (err) {
+    if (err)
+        Log.e("EnsureIndexes Failed", err);
+};
 
+async function ensureIndexes() {
     let modules = await Utils.loadModules(__dirname);
 
     for (let mod of modules) {
@@ -40,5 +36,8 @@ async function ensureIndexes() {
 }
 
 async function init_data() {
-
+    await UserModel.create({
+        name: "admin",
+        token: "abc"
+    }).catch(callback);
 }
