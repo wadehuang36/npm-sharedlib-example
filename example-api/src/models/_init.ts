@@ -1,4 +1,4 @@
-import { Utils } from "admittedly-lib";
+import { Utils } from "example-lib";
 import { Model, connection } from "mongoose";
 import { UserModel } from "./user";
 import Log from "../lib/Log";

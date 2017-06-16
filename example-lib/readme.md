@@ -1,4 +1,4 @@
-# Admittedly-lib
+# example-lib
 Shared Lib for
 - interfaces
 - simple utility functions

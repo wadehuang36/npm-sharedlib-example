@@ -10,7 +10,7 @@ import Log from "./lib/Log";
 import { environment } from "./environment";
 import { cors } from "./middlewares/cors";
 import { redirectToHttps } from "./middlewares/https";
-import { Utils, Interfaces } from "admittedly-lib";
+import { Utils, Interfaces } from "example-lib";
 import { dataInitialize } from "./models/_init";
 import { initializeRoutes } from "./routes/_init";
 

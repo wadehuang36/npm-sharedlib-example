@@ -1,7 +1,7 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
 import { environment } from "../environment";
-import { Interfaces, UrlHelper } from "admittedly-lib";
+import { Interfaces, UrlHelper } from "example-lib";
 
 
 export interface RouteContext extends Router.IRouterContext {

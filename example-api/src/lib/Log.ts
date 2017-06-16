@@ -1,5 +1,5 @@
 import { LogModel } from "../models/log"
-import { Interfaces } from "admittedly-lib"
+import { Interfaces } from "example-lib"
 
 function mergeMessages(arr:Array<any>): string {
     let msg = "";

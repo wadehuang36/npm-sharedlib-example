@@ -1,4 +1,4 @@
-import { Dict } from 'admittedly-lib';
+import { Dict } from 'example-lib';
 interface Environment {
     db_connection_string?: string;
     cors_origin?: boolean | string;
@@ -10,7 +10,7 @@ interface Environment {
 }
 
 const defaultEnv: Environment = {
-    db_connection_string: "mongodb://localhost:27017/admittedly",
+    db_connection_string: "mongodb://localhost:27017/example",
     cors_origin: "*",
     production: false,
     focus_https: false,

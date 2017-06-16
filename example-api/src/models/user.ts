@@ -1,4 +1,4 @@
-import { Interfaces } from "admittedly-lib"
+import { Interfaces } from "example-lib"
 import { createModel, Document, Schema } from "./_helper";
 
 let schema = {

@@ -1,6 +1,6 @@
 import * as Router from 'koa-router';
 import * as Koa from "koa"
-import { Utils } from "admittedly-lib";
+import { Utils } from "example-lib";
 import { Route } from '../lib/Route';
 import Log from "../lib/Log";
 

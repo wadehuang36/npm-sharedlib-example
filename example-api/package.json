@@ -1,9 +1,9 @@
 {
-  "name": "admittedly-api",
+  "name": "example-api",
   "version": "1.0.0",
-  "description": "the api for admittedly",
+  "description": "the api for example",
   "main": "./dist/app.js",
-  "repository": "https://github.com/swarmnyc/admittedly-api",
+  "repository": "https://github.com/swarmnyc/example-api",
   "scripts": {
     "start": "npm run build:live",
     "start:prod": "node ./dist/app.js",

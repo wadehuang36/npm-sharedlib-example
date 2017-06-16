@@ -1,7 +1,7 @@
 {
-  "name": "admittedly-lib",
+  "name": "example-lib",
   "version": "1.0.0",
-  "repository": "https://github.com/swarmnyc/admittedly-lib",
+  "repository": "https://github.com/swarmnyc/example-lib",
   "description": "shared lib for api, www",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
